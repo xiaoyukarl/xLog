@@ -1,0 +1,23 @@
+[2019-07-17 14:47:36]{"level":"debug","message":"111","context":[1111232]}
+[2019-07-17 14:47:50]{"level":"debug","message":"111","context":[1111232]}
+[2019-07-17 14:48:09]{"level":"warning","message":"111","context":[1111232]}
+[2019-07-17 14:48:14]{"level":"debug","message":"111","context":[1111232]}
+[2019-07-17 15:02:50]{"level":"warning","message":"hahha","context":{"msg":"The package is not available in a stable-enough version according to your minimum-stability setting"}}
+[2019-07-17 15:02:52]{"level":"debug","message":"hahha","context":{"msg":"The package is not available in a stable-enough version according to your minimum-stability setting"}}
+[2019-07-17 15:02:52]{"level":"notice","message":"hahha","context":{"msg":"The package is not available in a stable-enough version according to your minimum-stability setting"}}
+[2019-07-17 15:02:53]{"level":"debug","message":"hahha","context":{"msg":"The package is not available in a stable-enough version according to your minimum-stability setting"}}
+[2019-07-17 15:02:53]{"level":"error","message":"hahha","context":{"msg":"The package is not available in a stable-enough version according to your minimum-stability setting"}}
+[2019-07-17 15:02:53]{"level":"debug","message":"hahha","context":{"msg":"The package is not available in a stable-enough version according to your minimum-stability setting"}}
+[2019-07-17 15:03:01]{"level":"info","message":"hahha","context":{"msg":"Read <https:\/\/getcomposer.org\/doc\/articles\/troubleshooting.md> for further common problems."}}
+[2019-07-17 15:03:11]{"level":"emergency","message":"hahha","context":{"msg":"Your requirements could not be resolved to an installable set of packages."}}
+[2019-07-17 15:03:11]{"level":"debug","message":"hahha","context":{"msg":"Your requirements could not be resolved to an installable set of packages."}}
+[2019-07-17 15:03:11]{"level":"notice","message":"hahha","context":{"msg":"Your requirements could not be resolved to an installable set of packages."}}
+[2019-07-17 15:03:27]{"level":"error","message":"hahha","context":{"msg":"zouzhiqiangdeMacBook-Pro:xlog zouzhiqiang$ composer install\n."}}
+[2019-07-17 15:03:35]{"level":"info","message":"hahha","context":{"msg":"zouzhiqiangdeMacBook-Pro:xlog zouzhiqiang$ composer install\n."}}
+[2019-07-17 15:03:48]{"level":"debug","message":"hahha","context":{"msg":"ot could not be found in any version, there may be a typo in the package na"}}
+[2019-07-17 15:03:49]{"level":"debug","message":"hahha","context":{"msg":"ot could not be found in any version, there may be a typo in the package na"}}
+[2019-07-17 15:03:50]{"level":"debug","message":"hahha","context":{"msg":"ot could not be found in any version, there may be a typo in the package na"}}
+[2019-07-17 15:04:14]{"level":"critical","message":"hahha","context":{"msg":"osee <https:\/\/getcomposer.org\/doc\/04-schema.md#minimum-stability> for more details."}}
+[2019-07-17 15:04:14]{"level":"debug","message":"hahha","context":{"msg":"osee <https:\/\/getcomposer.org\/doc\/04-schema.md#minimum-stability> for more details."}}
+[2019-07-17 15:04:14]{"level":"alert","message":"hahha","context":{"msg":"osee <https:\/\/getcomposer.org\/doc\/04-schema.md#minimum-stability> for more details."}}
+[2019-07-17 15:04:14]{"level":"alert","message":"hahha","context":{"msg":"osee <https:\/\/getcomposer.org\/doc\/04-schema.md#minimum-stability> for more details."}}

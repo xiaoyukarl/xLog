@@ -1,0 +1,68 @@
+<div class="page-header mb-4">
+    <h1>Logs</h1>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+                <?php foreach($headers as $key => $header): ?>
+                    <th scope="col" class="<?php echo $key == 'date' ? 'text-left' : 'text-center'?>">
+                        <?php if ($key == 'date'): ?>
+                        <span class="badge badge-info"><?php echo $header?></span>
+                        <?php else:?>
+                        <span class="badge badge-level-<?php echo  $key?>">
+                            <i class="<?php echo $icons[$key]?>"></i> <?php echo  $header?>
+                        </span>
+                        <?php endif;?>
+                    </th>
+                <?php endforeach; ?>
+                <th scope="col" class="text-right">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php if (count($paginate['items'])): ?>
+        <?php foreach($paginate['items'] as $date => $row): ?>
+        <tr>
+            <?php foreach($row->getListData() as $key => $value) : ?>
+                <td class="<?php echo $key == 'date' ? 'text-left' : 'text-center'?>">
+                    <?php if ($key == 'date'): ?>
+                        <span class="badge badge-primary"><?php echo $value?></span>
+                    <?php  elseif ($value == 0): ?>
+                        <span class="badge empty"><?php echo $value?></span>
+                    <?php else: ?>
+                        <a href="<?php echo $showUrl . '?date='.$date .'&level='.$key?>">
+                            <span class="badge badge-level-<?php echo $key?>"> <?php echo $value?> </span>
+                        </a>
+                    <?php endif; ?>
+                </td>
+            <?php endforeach; ?>
+            <td class="text-right">
+                <a href="<?php echo $showUrl . '?date='.$date?>" class="btn btn-sm btn-info">
+                    <i class="fa fa-search"></i>
+                </a>
+                <a href="<?php echo $downloadUrl . '?date='.$date?>" class="btn btn-sm btn-success">
+                    <i class="fa fa-download"></i>
+                </a>
+                <a href="javascript:;" onclick="deleteModel.delete('<?php echo $date?>')" class="btn btn-sm btn-danger" data-log-date="<?php echo $date?>">
+                    <i class="fa fa-trash-o"></i>
+                </a>
+            </td>
+        </tr>
+        <?php endforeach;?>
+        <?php else: ?>
+        <tr>
+            <td colspan="11" class="text-center">
+                <span class="badge badge-secondary">empty logs</span>
+            </td>
+        </tr>
+        <?php endif; ?>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <?php echo $paginate['links']?>
+</div>
+
+

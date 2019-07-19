@@ -1,0 +1,4 @@
+[2019-07-17 15:02:53]{"level":"debug","message":"hahha","context":{"msg":"The package is not available in a stable-enough version according to your minimum-stability setting"}}
+[2019-07-17 15:03:49]{"level":"debug","message":"hahha","context":{"msg":"ot could not be found in any version, there may be a typo in the package na"}}
+[2019-07-17 15:03:50]{"level":"debug","message":"hahha","context":{"msg":"ot could not be found in any version, there may be a typo in the package na"}}
+[2019-07-17 15:04:14]{"level":"critical","message":"hahha","context":{"msg":"osee <https:\/\/getcomposer.org\/doc\/04-schema.md#minimum-stability> for more details."}}

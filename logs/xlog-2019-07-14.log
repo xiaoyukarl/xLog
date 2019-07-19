@@ -1,0 +1,4 @@
+[2019-07-17 15:02:53]{"level":"debug","message":"hahha","context":{"msg":"The package is not available in a stable-enough version according to your minimum-stability setting"}}
+[2019-07-17 15:02:53]{"level":"error","message":"hahha","context":{"msg":"The package is not available in a stable-enough version according to your minimum-stability setting"}}
+[2019-07-17 15:02:53]{"level":"debug","message":"hahha","context":{"msg":"The package is not available in a stable-enough version according to your minimum-stability setting"}}
+[2019-07-17 15:03:01]{"level":"info","message":"hahha","context":{"msg":"Read <https:\/\/getcomposer.org\/doc\/articles\/troubleshooting.md> for further common problems."}}
