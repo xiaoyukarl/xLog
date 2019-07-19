@@ -1,6 +1,5 @@
 # notes
 
-[![Build Status](https://travis-ci.org/guanguans/notes.svg?branch=master)](https://travis-ci.org/guanguans/notes)
 
 学习笔记
 
@@ -10,6 +9,13 @@
 
 因公司有多个项目是使用其他框架开发, 日志查看十分不方便, 因此开始学习参考log-viewer写一个相对通用的日志工具.
    
+* 使用说明
+
+获取此包
+```composer require xiaoyukarl/xlog```
+
+
+
 * 目录说明
 
 ```
