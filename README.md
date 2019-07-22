@@ -1,20 +1,35 @@
-# notes
-
-
-学习笔记
 
 ## xLog
 
 此包大部分思想参考 arcanedev/log-viewer, 如有雷同,纯属抄袭
 
-因公司有多个项目是使用其他框架开发, 日志查看十分不方便, 因此开始学习参考log-viewer写一个相对通用的日志工具.
-   
-* 使用说明
+因公司有多个项目是使用其他框架开发, 日志查看十分不方便, 因此参考log-viewer写一个相对通用的日志工具.
 
-获取此包
+若条件许可,各位最好使用elasticsearch + kibana, es提供日志储存,kibana提供视图查看和分析
+   
+#### 使用说明
+
+##### 获取此包
 ```composer require xiaoyukarl/xlog```
 
+##### 修改配置文件
 
+
+```
+    'storagePath' => __DIR__.'/../logs/',//日志保存目录, 请修改为你的项目日志保存目录
+    'viewsPath' => __DIR__.'/../resources/views/',//模板目录, 如需修改请将文件夹复制到你的项目模板目录
+    'staticPath' => '/resources/static/',//静态文件目录, 必须修改,否则无法读取
+    
+    /* -----------------------------------------------------------------
+    |  为了适配不同的框架,需要重新定义下面几个url
+    | -----------------------------------------------------------------
+    */
+    'dashboardUrl' => 'http://xlog.test/test/dashboard.php/',//仪表台url
+    'logListUrl' => 'http://xlog.test/test/logs.php/',//日志文件列表url
+    'showUrl' => 'http://xlog.test/test/show.php/',//详情url
+    'downloadUrl' => 'http://xlog.test/test/download.php/',//下载url
+    'deleteUrl' => 'http://xlog.test/test/delete.php/',//删除url
+```
 
 * 目录说明
 
@@ -35,12 +50,11 @@
  │  │  │  ├─jquery-3.2.1.min.js
  │  │  │  ├─popper.min.js
  │  │  ├─views
- │  │  │  ├─bootstrap-4     模板文件目录
- │  │  │  │  ├─dashboard.html   仪表台模板
- │  │  │  │  ├─footer.html   
- │  │  │  │  ├─header.html   
- │  │  │  │  ├─logs.html   日志文件列表
- │  │  │  │  ├─show.html   日志文件内容
+ │  │  │  ├─dashboard.html   仪表台模板
+ │  │  │  ├─footer.html   
+ │  │  │  ├─header.html   
+ │  │  │  ├─logs.html   日志文件列表
+ │  │  │  ├─show.html   日志文件内容
  │  ├─src                   测试目录
  │  │  ├─Entities
  │  │  │  ├─Controller.php     集合类
