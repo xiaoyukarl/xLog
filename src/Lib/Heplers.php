@@ -84,8 +84,7 @@ class Heplers
 
     protected static function getTemplateDir($template)
     {
-        Config::get('resource_path');
-        $staticFile = __DIR__ . '/../../resources/views/bootstrap-4/'.$template.'.html';
+        $staticFile = Config::get('viewsPath').$template.'.html';
         if(!is_file($staticFile)){
             throw new \Exception($staticFile . ' template not exist');
         }

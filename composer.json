@@ -20,7 +20,7 @@
             "email": "xiaoyukarl@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Xlog\\Lib\\": "src/Lib",
