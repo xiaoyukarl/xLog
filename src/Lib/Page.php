@@ -67,30 +67,31 @@ class Page{
         /* 构造普通模式的分页
         共4523条记录,每页显示10条,当前第1/453页 [首页] [上页] [1] [2] [3] .. [下页] [尾页]
         */
+        $style = 'style="padding:3px;"';
         $pageStr='共'.$this->count.'条记录，每页显示'.$this->subPages.'条';
         $pageStr.='当前第'.$this->currPage.'/'.$this->countPages.'页 ';
 
         $_GET['page'] = 1;
-        $pageStr.='<span>[<a href="'.$this->href.'&'.$this->pageName . '='.$_GET['page'].'">首页</a>] </span>';
+        $pageStr.='<span>[<a href="'.$this->href.'&'.$this->pageName . '='.$_GET['page'].'&perPage='.$this->subPages.'">首页</a>] </span>';
         //如果当前页不是第一页就显示上页
         if($this->currPage>1){
             $_GET['page'] = $this->currPage-1;
-            $pageStr.='<span>[<a href="'.$this->href.'&'.$this->pageName . '='.$_GET['page'].'">上页</a>] </span>';
+            $pageStr.='<span '.$style.'>[<a href="'.$this->href.'&'.$this->pageName . '='.$_GET['page'].'&perPage='.$this->subPages.'">上页</a>] </span>';
         }
 
         foreach ($this->page_arr as $k => $v) {
             $_GET['page'] = $k;
-            $pageStr.='<span>[<a href="'.$v.'">'.$k.'</a>] </span>';
+            $pageStr.='<span '.$style.'>[<a href="'.$v.'">'.$k.'</a>] </span>';
         }
 
         //如果当前页小于总页数就显示下一页
         if($this->currPage<$this->countPages){
             $_GET['page'] = $this->currPage+1;
-            $pageStr.='<span>[<a href="'.$this->href.'&'.$this->pageName . '='.$_GET['page'].'">下页</a>] </span>';
+            $pageStr.='<span '.$style.'>[<a href="'.$this->href.'&'.$this->pageName . '='.$_GET['page'].'&perPage='.$this->subPages.'">下页</a>] </span>';
         }
 
         $_GET['page'] = $this->countPages;
-        $pageStr.='<span>[<a href="'.$this->href.'&'.$this->pageName . '='.$_GET['page'].'">尾页</a>] </span>';
+        $pageStr.='<span '.$style.'>[<a href="'.$this->href.'&'.$this->pageName . '='.$_GET['page'].'&perPage='.$this->subPages.'">尾页</a>] </span>';
 
         return $pageStr;
     }
@@ -120,7 +121,7 @@ class Page{
 
         for ($i=$left; $i <= $right; $i++) {
             $_GET['page'] = $i;
-            $this->page_arr[$i]=$this->href.'&'.$this->pageName . '='.$_GET['page'];
+            $this->page_arr[$i]=$this->href.'&'.$this->pageName . '='.$_GET['page'].'&perPage='.$this->subPages;
         }
     }
 }

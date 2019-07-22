@@ -127,6 +127,9 @@ class Collection
      */
     public function setPerPage($perPage)
     {
+        if(isset($_GET['perPage']) && is_numeric($_GET['perPage'])){
+            $perPage = $_GET['perPage'];
+        }
         $perPage = (int) $perPage;
         $this->perPage = $perPage;
         return $this;

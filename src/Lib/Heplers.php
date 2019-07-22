@@ -64,6 +64,12 @@ class Heplers
         return $fileData;
     }
 
+    /**
+     * 渲染模板
+     * @param $template
+     * @param $params
+     * @throws \Exception
+     */
     public static function display($template ,$params)
     {
         extract($params);
@@ -80,8 +86,16 @@ class Heplers
         require_once self::getTemplateDir($template);
 
         require_once self::getTemplateDir('footer');
+
+        exit;//退出,防止渲染非日志模板的内容
     }
 
+    /**
+     * 获取模板路径
+     * @param $template
+     * @return string
+     * @throws \Exception
+     */
     protected static function getTemplateDir($template)
     {
         $staticFile = Config::get('viewsPath').$template.'.html';
@@ -89,5 +103,20 @@ class Heplers
             throw new \Exception($staticFile . ' template not exist');
         }
         return $staticFile;
+    }
+
+    /**
+     * 处理url格式,防止部分get获取错误
+     * @param $url
+     * @return string
+     */
+    public static function parseUrl($url)
+    {
+        if(preg_match('/\?\w+/', $url)){
+            $url = $url . '&';
+        }else{
+            $url = $url . '?&';
+        }
+        return $url;
     }
 }

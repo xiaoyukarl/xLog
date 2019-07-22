@@ -38,7 +38,7 @@
             <div class="card-header">
                 Log info :
                 <div class="group-btns pull-right">
-                    <a href="<?php echo $downloadUrl .'?date='. $log->date?>" class="btn btn-sm btn-success">
+                    <a href="<?php echo $downloadUrl .'date='. $log->date?>" class="btn btn-sm btn-success">
                         <i class="fa fa-download"></i> DOWNLOAD
                     </a>
                     <a href="javascript:;" onclick="deleteModel.delete('<?php echo $log->date?>')" class="btn btn-sm btn-danger" >
@@ -98,7 +98,7 @@
                         <?php foreach($paginate['items'] as $item):?>
                         <tr>
                             <td>
-                                <span class="badge badge-env"><?php echo $item->level?></span>
+                                <span class="badge badge-level-<?php echo $item->level?>"><?php echo $item->level?></span>
                             </td>
                             <td>
                                 <span class="badge badge-secondary">

@@ -31,17 +31,17 @@
                     <?php  elseif ($value == 0): ?>
                         <span class="badge empty"><?php echo $value?></span>
                     <?php else: ?>
-                        <a href="<?php echo $showUrl . '?date='.$date .'&level='.$key?>">
+                        <a href="<?php echo $showUrl . 'date='.$date .'&level='.$key?>">
                             <span class="badge badge-level-<?php echo $key?>"> <?php echo $value?> </span>
                         </a>
                     <?php endif; ?>
                 </td>
             <?php endforeach; ?>
             <td class="text-right">
-                <a href="<?php echo $showUrl . '?date='.$date?>" class="btn btn-sm btn-info">
+                <a href="<?php echo $showUrl . 'date='.$date?>" class="btn btn-sm btn-info">
                     <i class="fa fa-search"></i>
                 </a>
-                <a href="<?php echo $downloadUrl . '?date='.$date?>" class="btn btn-sm btn-success">
+                <a href="<?php echo $downloadUrl . 'date='.$date?>" class="btn btn-sm btn-success">
                     <i class="fa fa-download"></i>
                 </a>
                 <a href="javascript:;" onclick="deleteModel.delete('<?php echo $date?>')" class="btn btn-sm btn-danger" data-log-date="<?php echo $date?>">

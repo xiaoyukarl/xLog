@@ -59,7 +59,7 @@ class LogWriter
     public static function __callStatic($name, $arguments)
     {
         $levels = Config::get('levels');
-
+        unset($levels['all']);
         if(!array_key_exists($name, $levels)){
             throw new \Exception("method ".$name. " not exist");
         }

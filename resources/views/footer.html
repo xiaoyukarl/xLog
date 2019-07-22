@@ -15,7 +15,7 @@
 <script>
     let deleteModel = {
         delete : function (date) {
-            let deleteUrl = "<?php echo $deleteUrl . '?date='?>" + date;
+            let deleteUrl = "<?php echo $deleteUrl . 'date='?>" + date;
             if(confirm("Are you sure you want to delete this file?")){
                 window.location.href = deleteUrl;
             }

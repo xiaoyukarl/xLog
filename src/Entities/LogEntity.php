@@ -72,7 +72,7 @@ class LogEntity
 
     public function setContext($context)
     {
-        $this->context = json_encode($context, true);
+        $this->context = json_encode($context, JSON_UNESCAPED_UNICODE);
         return $this;
     }
 
