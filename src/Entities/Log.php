@@ -9,6 +9,7 @@ namespace Xlog\Entities;
 
 
 use Xlog\Lib\Config;
+use Xlog\Lib\Heplers;
 
 /**
  * 日志文件对象
@@ -32,9 +33,16 @@ class Log
         $this->path    = $path;
         $this->file = new \SplFileInfo($path);
 
-        $url = Config::get('showUrl') . '?date=' . $this->date;
+        $url = $this->getUrl();
 
         $this->entries = (new LogEntityCollection($url))->load($path);
+    }
+
+    protected function getUrl()
+    {
+        $url = Heplers::parseUrl(Config::get('showUrl'));
+        $url = $url. 'date=' . $this->date;
+        return $url;
     }
 
     public static function make($date, $path)
@@ -73,7 +81,7 @@ class Log
         $levels = Config::get('levels');
         $icons = Config::get('icons');
         foreach ($levels as $level => $levelName){
-            $url = Config::get('showUrl') . '?date=' . $this->date;
+            $url = $this->getUrl();
             $items = $this->entries->filterByLevel($level);
             $menu[$level]['name'] = $levelName;
             $menu[$level]['count'] =  $level=='all' ? count($this->getEntries()->items) : count($items);
