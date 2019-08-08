@@ -31,6 +31,13 @@
     'deleteUrl' => 'http://xlog.test/test/delete.php/',//删除url
 ```
 
+#####  图片展示
+![参考 logviewer 重写了一个日志读写包](https://cdn.learnku.com/uploads/images/201908/08/29585/e2Zzf1IIuC.jpg!/fw/1240)
+
+![参考 logviewer 重写了一个日志读写包](https://cdn.learnku.com/uploads/images/201908/08/29585/igDzOhGQXN.jpg!/fw/1240)
+
+![参考 logviewer 重写了一个日志读写包](https://cdn.learnku.com/uploads/images/201908/08/29585/xFMefkLEES.jpg!/fw/1240)
+
 * 目录说明
 
 ```
