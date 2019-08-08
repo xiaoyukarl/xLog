@@ -71,32 +71,26 @@ class Page{
         $pageStr='共'.$this->count.'条记录，每页显示'.$this->subPages.'条';
         $pageStr.='当前第'.$this->currPage.'/'.$this->countPages.'页 ';
 
-        $_GET['page'] = 1;
-        $_GET['perPage'] = $this->subPages;
-        $params = http_build_query($_GET);
-        $pageStr.='<span>[<a href="'.$this->href.'&'.$params.'">首页</a>] </span>';
+        $params = $this->getQueryParams(1);
+        $pageStr.='<span>[<a href="'.$this->href.$params.'">首页</a>] </span>';
         //如果当前页不是第一页就显示上页
         if($this->currPage>1){
-            $_GET['page'] = $this->currPage-1;
-            $params = http_build_query($_GET);
-            $pageStr.='<span '.$style.'>[<a href="'.$this->href.'&'.$params.'">上页</a>] </span>';
+            $params = $this->getQueryParams($this->currPage-1);
+            $pageStr.='<span '.$style.'>[<a href="'.$this->href.$params.'">上页</a>] </span>';
         }
 
         foreach ($this->page_arr as $k => $v) {
-            $_GET['page'] = $k;
             $pageStr.='<span '.$style.'>[<a href="'.$v.'">'.$k.'</a>] </span>';
         }
 
         //如果当前页小于总页数就显示下一页
         if($this->currPage<$this->countPages){
-            $_GET['page'] = $this->currPage+1;
-            $params = http_build_query($_GET);
-            $pageStr.='<span '.$style.'>[<a href="'.$this->href.'&'.$params.'">下页</a>] </span>';
+            $params = $this->getQueryParams($this->currPage+1);
+            $pageStr.='<span '.$style.'>[<a href="'.$this->href.$params.'">下页</a>] </span>';
         }
 
-        $_GET['page'] = $this->countPages;
-        $params = http_build_query($_GET);
-        $pageStr.='<span '.$style.'>[<a href="'.$this->href.'&'.$params.'">尾页</a>] </span>';
+        $params = $this->getQueryParams($this->countPages);
+        $pageStr.='<span '.$style.'>[<a href="'.$this->href.$params.'">尾页</a>] </span>';
 
         return $pageStr;
     }
@@ -124,11 +118,17 @@ class Page{
         $right=min($right,$this->countPages);  //右边最大不能大于总页数
         $left=max($right-$this->showPages+1,1); //确定右边再计算左边，必须二次计算
 
-        $_GET['perPage'] = $this->subPages;
         for ($i=$left; $i <= $right; $i++) {
-            $_GET['page'] = $i;
-            $params = http_build_query($_GET);
+            $params = $this->getQueryParams($i);
             $this->page_arr[$i]=$this->href.'&'.$params;
         }
+    }
+
+    protected function getQueryParams($page)
+    {
+        $params['perPage'] = $this->subPages;
+        $params['page'] = $page;
+        $params['level'] = isset($_GET['level']) ? $_GET['level'] : '';
+        return '&'.http_build_query($params);
     }
 }
