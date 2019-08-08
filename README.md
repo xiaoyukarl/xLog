@@ -14,7 +14,6 @@
 
 ##### 修改配置文件
 
-
 ```
     'storagePath' => __DIR__.'/../logs/',//日志保存目录, 请修改为你的项目日志保存目录
     'viewsPath' => __DIR__.'/../resources/views/',//模板目录, 如需修改请将文件夹复制到你的项目模板目录
@@ -29,6 +28,15 @@
     'showUrl' => 'http://xlog.test/test/show.php/',//详情url
     'downloadUrl' => 'http://xlog.test/test/download.php/',//下载url
     'deleteUrl' => 'http://xlog.test/test/delete.php/',//删除url
+```
+
+##### 写日志
+```
+//示例,支持静态方法
+//'emergency','alert','critical','error','warning','notice','info','debug'
+
+\Xlog\Lib\LogWriter::log('debug','message', ['context'=>'this is context']);
+\Xlog\Lib\LogWriter::debug('message', ['context'=>'this is context']);
 ```
 
 #####  图片展示
