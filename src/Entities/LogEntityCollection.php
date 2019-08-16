@@ -66,6 +66,7 @@ class LogEntityCollection extends Collection
     public function groupByLevel()
     {
         $levels = Config::get('levels');
+        krsort($this->items);
         foreach ($this->items as $item) {
             if(isset($levels[$item->level]) ){
                 $this->levelData[$item->level][] = $item;
